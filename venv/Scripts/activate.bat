@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=E:\FA\sparta_plus\Project01\venv
+set VIRTUAL_ENV=C:\Users\SMART\Documents\Github\Lx-S2\Project01\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
