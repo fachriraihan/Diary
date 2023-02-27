@@ -18,11 +18,9 @@ db = client[DB_NAME]
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 @app.route('/diary', methods=['GET'])
 def show_diary():
@@ -48,11 +46,14 @@ def save_diary():
     profilename = f'static/profile-{mytime}.{extension}'
     profile.save(profilename)
 
+    time = today.strftime('%Y.%m.%d')
+
     doc = {
         'file': filename,
         'profile' : profilename,
         'title': title_receive,
-        'content': content_receive
+        'content': content_receive,
+        'time': time,
     }
     db.diary.insert_one(doc)
 
